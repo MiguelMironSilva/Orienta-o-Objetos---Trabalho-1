@@ -1,6 +1,6 @@
-#Trabalho 1
+# Trabalho 1
 
-##Orientação à Objetos
+## Orientação à Objetos
 
-###Docente: Eduardo Kessler Piveta
-###Discente: Miguel Miron Silva
+### Docente: Eduardo Kessler Piveta
+### Discente: Miguel Miron Silva
