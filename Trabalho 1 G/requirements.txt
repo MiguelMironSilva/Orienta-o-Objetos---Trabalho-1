@@ -1,0 +1,19 @@
+# ==========================================
+# Dependências do Framework Universidade
+# ==========================================
+
+# --- Acesso a Dados (Relacional) ---
+# O sqlite3 já é nativo do Python, mas se a implementação do 
+# FabricaDAOSQL (Phase 3) for feita para um banco robusto como PostgreSQL:
+psycopg2-binary>=2.9.9
+
+# --- Interface de Console (Apresentação) ---
+# Bibliotecas modernas para melhorar a reconstrução do pacote 'infra.console'
+# Úteis para renderizar o MenuPrincipal e o FListagem com melhor legibilidade
+colorama>=0.4.6        # Suporte cross-platform para cores no terminal
+rich>=13.7.0           # Para desenhar tabelas formatadas (excelente para listagens de alunos/cursos)
+
+# --- Desenvolvimento e Testes (Opcional) ---
+# Boas práticas na construção de um framework moderno
+pytest>=8.0.0          # Para criar testes unitários para a camada de negócios e DAOs
+black>=24.2.0          # Formatador de código para manter o padrão

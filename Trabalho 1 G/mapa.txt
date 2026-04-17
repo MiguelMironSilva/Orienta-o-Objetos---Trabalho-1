@@ -1,0 +1,116 @@
+framework_universidade/
+│
+├── README.md                  # Project documentation
+├── requirements.txt           # External dependencies (e.g., psycopg2, if using Postgres)
+│
+├── infra/                     # LAYER 1: The Core Framework (Domain Agnostic)
+│   ├── __init__.py
+│   ├── console/
+│   │   ├── __init__.py
+│   │   ├── formularios/
+│   │   │   ├── __init__.py
+│   │   │   ├── formulario_base.py     # Base Form class
+│   │   │   ├── f_inclusao.py          # Generic Insert Form
+│   │   │   ├── f_alteracao.py         # Generic Update Form
+│   │   │   ├── f_exclusao.py          # Generic Delete Form
+│   │   │   ├── f_listagem.py          # Generic List Form
+│   │   │   └── f_visualizacao.py      # Generic View Form
+│   │   ├── menus/
+│   │   │   ├── __init__.py
+│   │   │   ├── menu.py                # Abstract Menu Builder
+│   │   │   └── menu_cadastro.py       # Standard CRUD Menu template
+│   │   └── util/
+│   │       ├── __init__.py
+│   │       └── console_util.py        # Keyboard input & type conversion utilities
+│   │
+│   ├── dados/
+│   │   ├── __init__.py
+│   │   ├── armazenamento/
+│   │   │   ├── __init__.py
+│   │   │   └── gerenciador_db.py      # Singleton DB connection pool manager
+│   │   └── dao/
+│   │       ├── __init__.py
+│   │       └── dao_base.py            # Generic abstract DAO (CRUD interfaces)
+│   │
+│   ├── entidades/
+│   │   ├── __init__.py
+│   │   └── registro.py                # Base abstract class for all entities
+│   │
+│   └── excecoes/
+│       ├── __init__.py
+│       └── base_erros.py              # Custom exceptions (e.g., RegistroNaoEncontradoError)
+│
+└── universidade/              # LAYER 2: The Specific Application Domain
+    ├── __init__.py
+    ├── app.py                 # MAIN EXECUTION SCRIPT (Entry point)
+    │
+    ├── entidades/             # Domain Models (using @dataclass)
+    │   ├── __init__.py
+    │   ├── departamento.py
+    │   ├── curso.py
+    │   ├── professor.py
+    │   ├── aluno.py
+    │   └── matricula.py
+    │
+    ├── dados/                 # Data Access Layer (SQL Implementations)
+    │   ├── __init__.py
+    │   ├── fabrica_dao_sql.py     # Abstract Factory implementation for SQL
+    │   ├── dao_departamentos.py
+    │   ├── dao_cursos.py
+    │   ├── dao_professores.py
+    │   ├── dao_alunos.py
+    │   └── dao_matriculas.py
+    │
+    ├── negocio/               # Business Logic Layer
+    │   ├── __init__.py
+    │   ├── gerenciador_alunos.py  # Controllers holding business rules
+    │   ├── gerenciador_cursos.py
+    │   └── regras_matricula.py    # Specific validation logic (e.g., credit limits)
+    │
+    └── console/               # Presentation Layer (Client UI)
+        ├── __init__.py
+        ├── menus/
+        │   ├── __init__.py
+        │   └── menu_principal.py  # The main application menu for the University
+        └── formularios/
+            ├── __init__.py
+            │
+            ├── departamentos/
+            │   ├── __init__.py
+            │   ├── fi_departamento.py   # Form to insert a new Department
+            │   ├── fa_departamento.py   # Form to update a Department
+            │   ├── fe_departamento.py   # Form to delete a Department
+            │   ├── fv_departamento.py   # Form to view a single Department's details
+            │   └── fl_departamento.py   # Form to list all Departments
+            │
+            ├── cursos/
+            │   ├── __init__.py
+            │   ├── fi_curso.py          # Form to insert a new Course
+            │   ├── fa_curso.py          # Form to update a Course
+            │   ├── fe_curso.py          # Form to delete a Course
+            │   ├── fv_curso.py          # Form to view a single Course's details
+            │   └── fl_curso.py          # Form to list all Courses
+            │
+            ├── professores/
+            │   ├── __init__.py
+            │   ├── fi_professor.py      # Form to insert a new Professor
+            │   ├── fa_professor.py      # Form to update a Professor
+            │   ├── fe_professor.py      # Form to delete a Professor
+            │   ├── fv_professor.py      # Form to view a single Professor's details
+            │   └── fl_professor.py      # Form to list all Professors
+            │
+            ├── alunos/
+            │   ├── __init__.py
+            │   ├── fi_aluno.py          # Form to insert a new Student
+            │   ├── fa_aluno.py          # Form to update a Student
+            │   ├── fe_aluno.py          # Form to delete a Student
+            │   ├── fv_aluno.py          # Form to view a single Student's details
+            │   └── fl_aluno.py          # Form to list all Students
+            │
+            └── matriculas/
+                ├── __init__.py
+                ├── fi_matricula.py      # Form to insert a new Enrollment
+                ├── fa_matricula.py      # Form to update an Enrollment
+                ├── fe_matricula.py      # Form to delete an Enrollment
+                ├── fv_matricula.py      # Form to view a single Enrollment's details
+                └── fl_matricula.py      # Form to list all Enrollments
