@@ -4,7 +4,7 @@ from abc import abstractmethod
 from typing import Any
 from infra.console.formularios.formulario_base import FormularioBase
 from infra.console.util.console_util import ConsoleUtil
-from infra.excecoes.base_erros import ErroDeValidacao
+from infra.excecoes.base_errors import ErroDeValidacao
 
 class FInclusao(FormularioBase):
     """

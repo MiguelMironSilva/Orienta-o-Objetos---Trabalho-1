@@ -1,4 +1,4 @@
-# framework_universidade/infra/excecoes/base_erros.py
+# framework_universidade/infra/excecoes/base_errors.py
 
 class FrameworkError(Exception):
     """

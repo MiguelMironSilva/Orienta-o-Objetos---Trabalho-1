@@ -2,7 +2,7 @@
 
 from infra.console.formularios.formulario_base import FormularioBase
 from infra.console.util.console_util import ConsoleUtil
-from infra.excecoes.base_erros import RegistroNaoEncontradoError
+from infra.excecoes.base_errors import RegistroNaoEncontradoError
 from typing import Any
 
 class FVisualizacao(FormularioBase):
