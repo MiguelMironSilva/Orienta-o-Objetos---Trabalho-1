@@ -15,7 +15,8 @@ class FADepartamento(FAlteracao):
         # Injeção do título e do gerenciador específico na superclasse
         super().__init__(titulo="ALTERAÇÃO DE DEPARTAMENTO", gerenciador=gerenciador_deptos)
 
-    def _coletar_dados_alteracao(self, departamento: Departamento) -> None:
+    def _coletar_alteracoes(self, departamento: Departamento) -> Departamento:
+        
         """
         Método 'hook' que define quais campos podem ser editados.
         O objeto 'departamento' já foi carregado do banco de dados pela classe pai.
@@ -35,3 +36,4 @@ class FADepartamento(FAlteracao):
         # Nota: A validação de unicidade da sigla e o tamanho do nome 
         # serão processados pelo GerenciadorDepartamentos assim que 
         # este método terminar e a classe pai chamar o método salvar.
+        return departamento

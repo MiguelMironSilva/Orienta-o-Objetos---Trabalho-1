@@ -13,7 +13,8 @@ class FACurso(FAlteracao):
         # Repassa o título e a inteligência de negócios para a superclasse
         super().__init__(titulo="ALTERAÇÃO DE CURSO", gerenciador=gerenciador_cursos)
 
-    def _coletar_dados_alteracao(self, curso: Curso) -> None:
+    def _coletar_alteracoes(self, curso: Curso) -> Curso:
+        
         """
         Método 'gancho' chamado pela FAlteracao. 
         Neste ponto, o 'curso' já foi validado e buscado no banco de dados.
@@ -43,3 +44,4 @@ class FACurso(FAlteracao):
 
         # Note que não checamos aqui se a duração é menor que 2 ou se o departamento existe.
         # Isso é responsabilidade do GerenciadorCursos! A tela apenas coleta e tipa os dados.
+        return curso

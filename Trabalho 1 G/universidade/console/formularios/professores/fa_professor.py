@@ -13,7 +13,8 @@ class FAProfessor(FAlteracao):
         # Injeção do título e do gerenciador na superclasse genérica
         super().__init__(titulo="ALTERAÇÃO DE PROFESSOR", gerenciador=gerenciador_professores)
 
-    def _coletar_dados_alteracao(self, professor: Professor) -> None:
+    def _coletar_alteracoes(self, professor: Professor) -> Professor:
+        
         """
         Método hook para coleta de dados do docente.
         O objeto 'professor' já contém os dados atuais vindos do banco.
@@ -41,3 +42,4 @@ class FAProfessor(FAlteracao):
 
         # O GerenciadorProfessores validará se a titulação é permitida e 
         # se o ID do departamento faz sentido antes de persistir.
+        return professor

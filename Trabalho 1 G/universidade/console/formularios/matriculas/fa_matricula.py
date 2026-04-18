@@ -13,7 +13,8 @@ class FAMatricula(FAlteracao):
     def __init__(self, gerenciador_matriculas: GerenciadorMatriculas):
         super().__init__(titulo="ALTERAÇÃO DE MATRÍCULA", gerenciador=gerenciador_matriculas)
 
-    def _coletar_dados_alteracao(self, matricula: Matricula) -> None:
+    def _coletar_alteracoes(self, matricula: Matricula) -> Matricula:
+        
         """
         Hook Method para coleta de dados. 
         Nota: Geralmente não alteramos os IDs de Aluno/Curso de uma matrícula 
@@ -36,3 +37,4 @@ class FAMatricula(FAlteracao):
 
         # A lógica de negócio no GerenciadorMatriculas impedirá, por exemplo,
         # que uma matrícula 'Concluída' seja alterada ou excluída sem critérios.
+        return matricula

@@ -4,4 +4,4 @@ from universidade.negocio.gerenciador_cursos import GerenciadorCursos
 class FLCurso(FListagem):
     """Exibe todos os cursos e suas respectivas durações."""
     def __init__(self, gerenciador_cursos: GerenciadorCursos):
-        super().__init__(titulo="LISTAGEM DE CURSOS", gerenciador=gerenciador_cursos)
+        super().__init__(titulo="LISTAGEM DE CURSOS", gerenciador=gerenciador_cursos, colunas=["ID", "Nome", "Semestres", "Depto ID"], atributos=["id_curso", "nome", "duracao_semestres", "id_departamento"])

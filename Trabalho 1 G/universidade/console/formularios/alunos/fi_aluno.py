@@ -9,7 +9,8 @@ class FIAluno(FInclusao):
     def _coletar_dados(self) -> Aluno:
         # Captura inputs do console
         nome = input("Nome Completo: ").strip()
+        cpf = input("CPF (apenas números): ").strip()
         data = input("Data de Ingresso: ").strip()
         
         # Retorna a entidade sem ID (será gerado pelo banco)
-        return Aluno(id_aluno=None, nome=nome, data_ingresso=data)
+        return Aluno(id_aluno=None, nome=nome, cpf=cpf, data_ingresso=data)
