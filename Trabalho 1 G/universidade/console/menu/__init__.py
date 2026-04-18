@@ -1,5 +1,5 @@
-from .menu_principal import Menu_Principal
+from .menu_principal import MenuPrincipal
 
 __all__ = [
-	"Menu_Principal"
+	"MenuPrincipal"
 ]

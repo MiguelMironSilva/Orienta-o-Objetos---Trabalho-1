@@ -5,7 +5,7 @@ Pacote Console (Universidade)
 Contém a interface de linha de comando específica para o sistema da Universidade.
 """
 
-from .menus.menu_principal import MenuPrincipal
+from .menu.menu_principal import MenuPrincipal
 
 # Exibe apenas o MenuPrincipal para o app.py. 
 # Os formulários específicos (FIAluno, etc.) serão importados e instanciados 
