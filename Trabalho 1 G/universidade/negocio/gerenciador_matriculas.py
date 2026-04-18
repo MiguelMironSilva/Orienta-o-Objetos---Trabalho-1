@@ -2,7 +2,7 @@
 
 from typing import List
 from datetime import datetime
-from infra.excecoes.base_erros import ErroDeValidacao
+from infra.excecoes.base_errors import ErroDeValidacao
 from universidade.entidades.matricula import Matricula
 from universidade.dados.dao_matriculas import DAOMatriculas
 

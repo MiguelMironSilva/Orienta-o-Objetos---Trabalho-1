@@ -32,6 +32,7 @@ CREATE TABLE IF NOT EXISTS professor (
 CREATE TABLE IF NOT EXISTS aluno (
     id_aluno INTEGER PRIMARY KEY AUTOINCREMENT,
     nome TEXT NOT NULL,
+    cpf TEXT NOT NULL UNIQUE,
     data_ingresso TEXT NOT NULL,
     matricula_ativa INTEGER DEFAULT 1 -- SQLite não tem booleano nativo, usamos 1 para True e 0 para False
 );

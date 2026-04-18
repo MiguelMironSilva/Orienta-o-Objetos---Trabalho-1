@@ -1,7 +1,7 @@
 # framework_universidade/universidade/negocio/gerenciador_matriculas.py
 
 from typing import List
-from infra.excecoes.base_erros import ErroDeValidacao, RegistroNaoEncontradoError
+from infra.excecoes.base_errors import ErroDeValidacao, RegistroNaoEncontradoError
 from universidade.entidades.matricula import Matricula
 from universidade.dados.dao_matriculas import DAOMatriculas
 from datetime import datetime
@@ -54,7 +54,7 @@ class GerenciadorMatriculas:
         # Normaliza a string (ex: 'ativa' vira 'Ativa')
         matricula.status = matricula.status.capitalize() 
         
-        if matricula.status not title() not in status_permitidos:
+        if matricula.status not in status_permitidos:
             raise ErroDeValidacao(
                 f"Status inválido: '{matricula.status}'. Use apenas: {', '.join(status_permitidos)}"
             )

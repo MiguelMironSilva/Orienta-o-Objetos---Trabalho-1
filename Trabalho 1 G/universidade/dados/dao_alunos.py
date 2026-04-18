@@ -33,6 +33,7 @@ class DAOAlunos(DAOBase[Aluno]):
         return Aluno(
             id_aluno=linha["id_aluno"],
             nome=linha["nome"],
+            cpf=linha["cpf"],
             data_ingresso=linha["data_ingresso"],
             matricula_ativa=bool(linha["matricula_ativa"]) # Converte o 0/1 do SQLite de volta para booleano
         )
@@ -45,6 +46,7 @@ class DAOAlunos(DAOBase[Aluno]):
         return {
             "id_aluno": objeto.id_aluno,
             "nome": objeto.nome,
+            "cpf": objeto.cpf,
             "data_ingresso": objeto.data_ingresso,
             "matricula_ativa": int(objeto.matricula_ativa) # Converte o booleano para 1/0 para o SQLite
         }

@@ -15,6 +15,7 @@ class Aluno(Registro):
     # id_aluno é Optional porque, antes de salvar no banco, o ID não existe (é None)
     id_aluno: Optional[int]
     nome: str
+    cpf: str
     data_ingresso: str
     matricula_ativa: bool = True  # Valor padrão: todo aluno novo começa ativo
 

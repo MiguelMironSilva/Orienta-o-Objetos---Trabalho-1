@@ -1,7 +1,7 @@
 # framework_universidade/universidade/negocio/gerenciador_cursos.py
 
 from typing import List
-from infra.excecoes.base_erros import ErroDeValidacao
+from infra.excecoes.base_errors import ErroDeValidacao
 from universidade.entidades.curso import Curso
 from universidade.dados.dao_cursos import DAOCursos
 

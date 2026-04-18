@@ -12,15 +12,11 @@ from .gerenciador_professores import GerenciadorProfessores
 from .gerenciador_alunos import GerenciadorAlunos
 from .gerenciador_matriculas import GerenciadorMatriculas
 
-# Importação de regras específicas mais complexas (se aplicável ao padrão Strategy, por exemplo)
-from .regras_matricula import RegrasMatricula
-
 # Define a API pública da camada de negócios da aplicação
 __all__ = [
     "GerenciadorDepartamentos",
     "GerenciadorCursos",
     "GerenciadorProfessores",
     "GerenciadorAlunos",
-    "GerenciadorMatriculas",
-    "RegrasMatricula"
+    "GerenciadorMatriculas"
 ]

@@ -1,7 +1,7 @@
 # framework_universidade/universidade/negocio/gerenciador_professores.py
 
 from typing import List
-from infra.excecoes.base_erros import ErroDeValidacao
+from infra.excecoes.base_errors import ErroDeValidacao
 from universidade.entidades.professor import Professor
 from universidade.dados.dao_professores import DAOProfessores
 
