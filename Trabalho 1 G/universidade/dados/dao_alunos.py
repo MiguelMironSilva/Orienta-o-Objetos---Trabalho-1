@@ -1,6 +1,6 @@
 # framework_universidade/universidade/dados/dao_alunos.py
 
-from typing import List
+from typing import List, Optional
 from infra import DAOBase
 from universidade.entidades import Aluno
 
@@ -67,3 +67,20 @@ class DAOAlunos(DAOBase[Aluno]):
         
         # Reutilizamos o mapeador que criamos acima
         return [self._mapear_linha_para_objeto(linha) for linha in linhas]
+
+    def buscar_por_cpf(self, cpf: str) -> Optional[Aluno]:
+        """
+        Exemplo de extensão: Busca um CPF específic0.
+        Útil para validações antes de inserir um novo aluno, garantindo
+        que não existam dois alunos iguais no sistema.
+        """
+        query = f"SELECT * FROM {self._nome_tabela} WHERE cpf = ?"
+        
+        # Executa a leitura passando a sigla como parâmetro de segurança contra SQL Injection
+        linhas = self.db.executar_leitura(query, (cpf,))
+        
+        if not linhas:
+            return None
+            
+        # Como o cpf deve ser único, retornamos apenas o primeiro resultado mapeado
+        return self._mapear_linha_para_objeto(linhas[0])
