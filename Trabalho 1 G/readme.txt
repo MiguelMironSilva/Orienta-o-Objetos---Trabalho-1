@@ -34,7 +34,8 @@ O sistema está configurado para verificar a existência do arquivo universidade
 No terminal, dentro da pasta raiz do projeto, execute:
 
 Bash
-python app.py
+pip install -r requirements.txt
+python -m universidade.app
 Funcionamento das Camadas
 Inicialização (app.py): O script cria a FabricaDAOSQLite, que gera os DAOs necessários. Estes são injetados nos Gerenciadores, que por sua vez são injetados no MenuPrincipal.
 
